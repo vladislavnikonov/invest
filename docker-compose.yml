@@ -1,0 +1,22 @@
+version: "3"
+services:
+  database:
+    image: postgres:15.3
+    ports:
+      - mode: ingress
+        target: 5432
+        published: ${DB_PORT}
+        protocol: tcp
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+
+  pgadmin:
+    image: dpage/pgadmin4:7.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "habrpguser@habr.com"
+      PGADMIN_DEFAULT_PASSWORD: "pgadminpwd4habr"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5050:80"

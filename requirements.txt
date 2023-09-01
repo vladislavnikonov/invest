@@ -1,0 +1,7 @@
+alembic~=1.11.1
+asyncpg
+fastapi[all]~=0.100.0
+fastapi-users[sqlalchemy]
+python-dotenv~=1.0.0
+sqlalchemy~=2.0.19
+pydantic~=2.1.1
